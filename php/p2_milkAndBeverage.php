@@ -5,7 +5,7 @@
     <div class="products">
         <div class="products-header">
             <h2 class="title">Beverages</h2>
-            <a href="../php/Homepage.php">
+            <a href="..php/Homepage.php">
                 <h4>Go Back <i>&#x2192</i></h4>
             </a>
         </div>
