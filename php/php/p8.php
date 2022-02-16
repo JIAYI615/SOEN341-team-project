@@ -23,26 +23,38 @@
         <h1 style="color:darkgray; position:static; text-align:center">Product Detail</h1>
 
         <div style="position:static; height:800px; width:90wh;">
-            <form action="" id="Detail">
+            <form action="../php/AddProduct.php" id="Detail" method="post" enctype="multipart/form-data"> 
             <div style="float:left">
                 <h2 style="color:darkgray; margin-left:13vw;">Product Description</h2>
-                <textarea id="description" rows="40" cols="85" style="resize:none; width:30vw; margin-left:8vw; line-height:1.2em;"></textarea>
+                <textarea name="description" rows="40" cols="85" style="resize:none; width:30vw; margin-left:8vw; line-height:1.2em;"></textarea>
             </div>
 
             <div style="height: 800px">
                 <br>
                 <h2 style="color:darkgray; margin-left:58vw;">Product Image</h2>
-                <img src="../images/garlic_commodity-page.png" style="margin-left:20vw; width:8vw; height:auto"/>
-                <button class="button" id="new_img" name="new_img" type="button" style="top:4vh; left:-6vw"><label for="new_img">UPLOAD</label></button>
+                <input type="file" name="image" style="margin-left:20vw;">
+<!--    <img src="../images/garlic_commodity-page.png" style="margin-left:20vw; width:8vw; height:auto"/>   -->
+<!--    <button class="button" id="new_img" name="new_img" type="button" style="top:4vh; left:-6vw"><label for="new_img">UPLOAD</label></button> -->
                 <br><br><br><br><br>
+                <h2 style="color:darkgray; margin-left:58vw;">Product Name</h2>
+                <input type="text"  name="name" style="margin-left:20vw;">
+                <h2 style="color:darkgray; margin-left:58vw;">Product Category</h2>
+                <select  name="category" style="margin-left:20vw;">
+                    <option value="">Select...</option>
+                    <option value="Vegetables">Vegetables</option>
+                    <option value="Fruits">Fruits</option>
+                    <option value="Meat">Meat</option>
+                    <option value="Beverages">Beverages</option>
+                </select>
+<!--                <input type="text"  name="category" style="margin-left:20vw;"> -->
                 <h2 style="color:darkgray; margin-left:58vw;">Product Price</h2>
-                <input type="text" id="price" name="price" style="margin-left:20vw;">
-                <br><br><br><br><br>
+                <input type="text"  name="price" style="margin-left:20vw;">
                 <h2 style="color:darkgray; margin-left:58vw;">Product Quantity</h2>
-                <input type="text" id="quantity" name="quantity" style="margin-left:20vw;">
+                <input type="text"  name="quantity" style="margin-left:20vw;">
             </div>
             <br><br>
-            <button class="button" type="submit" form="Detail" value="Save" name="save" style="top:-8.7vh; left:76vw;"><label for"save">SAVE</label></button>
+            <button class="button" type="submit" form="Detail" style="top:-8.7vh; left:76vw;">Add</button>
+            </form>
         </div>
     </div>
     

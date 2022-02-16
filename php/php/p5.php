@@ -1,16 +1,15 @@
 <?php include '../php/header.php'; ?>
 
     <!--log in page-->
-    <div id="login-box">
-        <form action="">
+    <div id="login-box" >
+        <form action="../php/login.php" method="post">
          <h1>Login</h1>
           <div class="form">
             <div class="item">
-               <input type="text" placeholder="email" />
+               <input type="text" placeholder="email" name="LogEmail"/>
             </div>
             <div class="item">
-               <input type="password" placeholder="Password"/>
-              <br><a href="">forget password?</a>
+               <input type="password" placeholder="Password" name="LogPassWord"/>
             </div>
         </div>
           <button type="submit">Submit</button>

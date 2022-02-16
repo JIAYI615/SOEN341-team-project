@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php session_start();?>
 <head>
     <title>WayToHealth</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,11 +29,47 @@
                 <div class="navbar-right-top">
                     <ul>
                         <!--contact-->
-                        <li><a href="../php/p5.php">Log in</a></li>
+                        
+                        <?php 
+                        if(isset($_SESSION["Username"])){
+                            if($_SESSION["Email"]=="Admin"){
+                            echo "";
+                            }else{
+                                $link="../php/UserPortal.php";
+                                echo '<a href="'.$link.'">My Account</a>';
+                            }
+
+                        }else{
+                            echo "";
+                        } 
+                       ?>
+                       
+                       &nbsp;&nbsp;
+                        
+                        <?php
+                        if(isset($_SESSION["Username"])){
+                            echo $_SESSION["Username"];
+                        }else{
+                            $link="../php/p5.php";
+                            echo '<a href="'.$link.'">Log in</a>';
+                        }
+                        
+                        ?>   
+                        
+                        &nbsp;&nbsp;
                         <!--user-->
-                        <li><a href="../php/p6.php">Sign up</a></li>
+                       
+                        <?php if(isset($_SESSION["Username"])){
+                            $link="../php/logout.php";
+                            echo '<a href="'.$link.'">Log out</a>';
+                        }else{
+                            $link="../php/p6.php";
+                            echo '<a href="'.$link.'">  Sign up</a>';
+                        } 
+                       ?>
+                        &nbsp;&nbsp;&nbsp;
                         <!--shopping cart-->
-                        <li class="cart-icon">
+                        <li class="cart-icon"> 
                             <a href="../php/p4_shopCart.php"><img src="../images/cart.png" alt="icon of cart" width="30px"></a>
                         </li>
                     </ul>
@@ -44,7 +80,7 @@
 
     <!--menu-->
     <nav class="menu">
-        <div class="menu-bar hide">
+    <div class="menu-bar hide">
             <ul>
                 <li><a href="../php/Homepage.php">Home</a></li>
                 <li><a href="#">Aisle</a>
@@ -56,11 +92,22 @@
                     </ul>
                 </li>
                 <li><a href="../php/p4_shopCart.php">Cart</a></li>
-                <li><a href="#">BackEnd</a>
-                    <ul class="dropdown">
-                        <li><a href="../php/p8.php">Product</a></li>
-                        <li><a href="../php/p7.php">Products List</a></li>
-                    </ul>
+                <li>
+                <?php
+                if(isset($_SESSION["Email"])){
+                    if($_SESSION["Email"] == "Admin"){
+                    echo  '  <a href="#">BackEnd</a>
+                     <ul class="dropdown">
+                            <li><a href="../php/p8.php">Product</a></li>
+                            <li><a href="../php/p7.php">Products List</a></li>
+                        </ul>';
+                    }else{
+                       echo "";
+                    }
+                }else{
+                    echo "";
+                }
+                ?>
                 </li>
             </ul>
         </div>
@@ -74,7 +121,8 @@
                         <li><a href="../php/p2_milkAndBeverage.php">Beverages</a></li>
                     </ul>
                 </li>
-                <li><a href="#">BackEnd</a>
+                <li>
+                   <a href="#">BackEnd</a>
                     <ul class="dropdown">
                         <li><a href="../php/p8.php">Product</a></li>
                         <li><a href="../php/p7.php">Products List</a></li>
