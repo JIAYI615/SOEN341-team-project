@@ -1,6 +1,9 @@
 {
-  "language": "php",
-  "os": [
-    "osx"
-  ]
+  language: php
+  php:
+    - "7.2"
+  intall:
+      - npm install
+  "os": "osx"
+
 }
