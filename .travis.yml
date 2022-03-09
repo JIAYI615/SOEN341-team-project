@@ -1,3 +1,6 @@
-language: php
-
-os: osx
+{
+  "language": "php",
+  "os": [
+    "osx"
+  ]
+}
