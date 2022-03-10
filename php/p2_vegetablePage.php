@@ -10,7 +10,7 @@
         <div class="row">
             <div class="products-row1">
                 <div class="products-col">
-                    <a href="../php/sweet_potatoes.php">
+                    <a href="p3_vegetable_sweetPotatoes.html">
                         <img src="../images/Vegetables/sweet_potatoes.jpg" alt="#">
                         <h4>Sweet Potatoes</h4>
                     </a>
@@ -19,7 +19,7 @@
                     <p>$4.39 /kg$1.99 /lb.</p>
                 </div>
                 <div class="products-col">
-                    <a href="../php/potatoes.php">
+                    <a href="p3_vegetable_potatoes.html">
                         <img src="../images/Vegetables/potatoes.jpg" alt="#">
                         <h4>Potatoes</h4>
                     </a>
@@ -30,7 +30,7 @@
             </div>
             <div class="products-row2">
                 <div class="products-col">
-                    <a href="../php/garlic.php">
+                    <a href="p3_vegetable_garlic.html">
                         <img src="../images/Vegetables/garlic_commodity-page.jpg" alt="#">
                         <h4>Garlic</h4>
                     </a>
@@ -39,7 +39,7 @@
                     <p>$13.21 /kg$5.99 /lb.</p>
                 </div>
                 <div class="products-col">
-                    <a href="../php/sweet_potatoes.php">
+                    <a href="p3_vegetable_bagOfCarrots.html">
                         <img src="../images/Vegetables/Bag_of_Carrots.jpg" alt="#">
                         <h4>Bag of Carrots</h4>
                     </a>

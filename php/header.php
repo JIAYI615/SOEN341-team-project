@@ -83,7 +83,6 @@
     <div class="menu-bar hide">
             <ul>
                 <li><a href="../php/Homepage.php">Home</a></li>
-                <li><a href="../php/promotionPage.php">Promotion</a></li>
                 <li><a href="#">Aisle</a>
                     <ul class="dropdown">
                         <li><a href="../php/p2_vegetablePage.php">Vegetables</a></li>
@@ -122,7 +121,6 @@
                         <li><a href="../php/p2_milkAndBeverage.php">Beverages</a></li>
                     </ul>
                 </li>
-
                 <li>
                    <a href="#">BackEnd</a>
                     <ul class="dropdown">
