@@ -13,7 +13,9 @@ if($FirstName == "" || $LastName == "" || $Username ==  "" || $Email == "" || $P
     header("location:../php/p6.php");
     //echo "<script type='text/javascript'>alert('please fill all the blanks');</script>";
 }else{
-    if ($result = mysqli_query($db, "select Email from Users where Email == '$Email'")){
+    $check="select * from Users where Email = '$Email'";
+    $CheckResult=mysqli_query($db, $check);
+    if ($data = mysqli_fetch_array($CheckResult)){
     echo "<script type='text/javascript'>alert('This email is used!');</script>";
     }else{
         $sql = "insert into Users(Email,Password,Firstname,Username,Lastname,Address,PhoneNumber ) 
