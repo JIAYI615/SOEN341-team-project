@@ -32,6 +32,7 @@
                     foreach($_SESSION['shops'] as $shop){
                     $tot+=$shop['price']*$shop['ShopQ'];
                     $totQ+=$shop['ShopQ'];
+                    $_SESSION["Total"]=$tot;
                 
             ?>
             <tr>
