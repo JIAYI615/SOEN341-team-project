@@ -1,53 +1,73 @@
-<?php include '../php/header.php'; ?>
+<?php include '../php/header.php'; 
+include '../php/dbConn.php'; 
+?>
 
 
     <!--Products-->
-    <div class="products">
-        <div class="products-header">
-            <h2 class="title">Fruits</h2>
+    <div class="deals">
+        <div class="deals-header">
+            <h2 class="title">Vegetables</h2>
             <a href="../php/Homepage.php">
                 <h4>Go Back <i>&#x2192</i></h4>
             </a>
         </div>
-        <div class="row">
-            <div class="products-row1">
-                <div class="products-col">
-                    <a href="p3_fruit_apple.html">
-                        <img src="../images/Fruits/apple.jpg" alt="#">
-                        <h4>Apple</h4>
-                    </a>
-                    <p class="new-price"><strong>$1.04 avg. ea.</strong></p>
-                    <p>(190g avg.)</p>
-                    <p>$5.49 /kg$2.49 /lb.</p>
-                </div>
-                <div class="products-col">
-                    <a href="p3_fruit_bananas.html">
-                        <img src="../images/Fruits/banana.jpg" alt="#">
-                        <h4>Bananas</h4>
-                    </a>
-                    <p class="new-price"><strong>$0.33 avg. ea.</strong></p>
-                    <p>(190g avg.)</p>
-                    <p>$1.74 /kg$0.79 /lb.</p>
-                </div>
-            </div>
-            <div class="products-row2">
-                <div class="products-col">
-                    <a href="p3_fruit_redGrapes.html">
-                        <img src="../images/Fruits/RedGrapes.jpg" alt="#">
-                        <h4>RedGrapes</h4>
-                    </a>
-                    <p class="new-price"><strong>$0.66 avg. ea.</strong></p>
-                    <p>(100g avg.)</p>
-                    <p>$6.59 /kg$2.99 /lb.</p>
-                </div>
-                <div class="products-col">
-                    <a href="p3_fruit_watermelon.html">
-                        <img src="../images/Fruits/watermelon.jpg" alt="#">
-                        <h4>Watermelon</h4>
-                    </a>
-                    <p class="new-price"><strong>$3.90 avg. ea.</strong></p>
-                    <p>(1,190g avg.)</p>
-                    <p>$3.28 /kg$1.49 /lb</p>
+                    
+                    
+<?php
+
+$records = mysqli_query($db,"select * from soen341.product_table where category = 'Fruits'");
+$i=0;
+echo "<table><tr>";
+while($data = mysqli_fetch_array($records))
+{
+    if($i %3 ==0){
+    $imageN=$data["images"];
+    echo"</tr><tr><td style='text-align: center;'>";
+
+    ?>
+    <a href="detail.php?detail_id=<?php echo $data['product_id']?>">
+    
+    <img src='../images/<?php echo $imageN ?>' width='300'>
+  
+    </a>
+    <?php
+    echo "<td>";
+    echo $data['name'];
+ //   echo "</td>"; 
+    echo "<br>";
+    echo " $";
+    echo $data['price']; 
+    echo "</td>";
+    echo"</td>";
+    }else{
+    $imageN=$data["images"];
+    echo"<td style='text-align: center;'>";
+    ?>
+    <a href="detail.php?detail_id=<?php echo $data['product_id']?>">
+    
+    <img src='../images/<?php echo $imageN ?>' width='300'>
+  
+    </a>
+    <?php
+    echo "<td>";
+    echo $data['name'];
+ //   echo "</td>"; 
+    echo "<br>";
+    echo " $";
+    echo $data['price']; 
+    echo "</td>";
+    echo"</td>";
+    }
+    $i++;
+}
+echo '</table>';
+
+?>
+      
+        
+           
+           
+    </div>
                 </div>
             </div>
         </div>

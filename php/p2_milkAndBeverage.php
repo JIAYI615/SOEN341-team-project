@@ -1,53 +1,71 @@
-<?php include '../php/header.php'; ?>
+<?php include '../php/header.php'; 
+include '../php/dbConn.php'; 
+?>
 
 
     <!--Products-->
-    <div class="products">
-        <div class="products-header">
-            <h2 class="title">Beverages</h2>
-            <a href="..php/Homepage.php">
+    <div class="deals">
+        <div class="deals-header">
+            <h2 class="title">Vegetables</h2>
+            <a href="../php/Homepage.php">
                 <h4>Go Back <i>&#x2192</i></h4>
             </a>
         </div>
-        <div class="row">
-            <div class="products-row1">
-                <div class="products-col">
-                    <a href="p3_milkAndBeverage_milk.html">
-                        <img src="../images/MilkAndBeverage/Milk.jpg" alt="#">
-                        <h4>Milk</h4>
-                    </a>
-                    <p class="new-price"><strong>$7.79 ea.</strong></p>
-                    <p>($4 L)</p>
-                    <p>$0.19 /100ml.</p>
-                </div>
-                <div class="products-col">
-                    <a href="p3_milkAndBeverage_7up.html">
-                        <img src="../images/MilkAndBeverage/7upSoftDrink.jpg" alt="#">
-                        <h4>7 up Soft Drink </h4>
-                    </a>
-                    <p class="new-price"><strong>$6.99 ea.</strong></p>
-                    <p>(15*355 ml)</p>
-                    <p>$0.16 /100 ml</p>
-                </div>
-            </div>
-            <div class="products-row2">
-                <div class="products-col">
-                    <a href="p3_milkAndBeverage_blueberryDrinkableYogurt.html">
-                        <img src="../images/MilkAndBeverage/BlueberryYogurt.jpg" alt="#">
-                        <h4>Blueberry Drinkable Yogurt</h4>
-                    </a>
-                    <p class="new-price"><strong>$ 3.00 / 3</strong></p>
-                    <p>(200 ml)</p>
-                    <p>$0.50 /100ml</p>
-                </div>
-                <div class="products-col">
-                    <a href="p3_milkAndBeverage_naturalSpringWater.html">
-                        <img src="../images/MilkAndBeverage/NaturalSpringWater.jpg" alt="#">
-                        <h4>Natural Spring Water</h4>
-                    </a>
-                    <p class="new-price"><strong>$ 2.99 ea.</strong></p>
-                    <p>(24*500 ml)</p>
-                    <p>$ 0.02/100 ml</p>
+                <?php
+
+$records = mysqli_query($db,"select * from soen341.product_table where category = 'Beverages'");
+$i=0;
+echo "<table><tr>";
+while($data = mysqli_fetch_array($records))
+{
+    if($i %3 ==0){
+    $imageN=$data["images"];
+    echo"</tr><tr><td style='text-align: center;'>";
+
+    ?>
+    <a href="detail.php?detail_id=<?php echo $data['product_id']?>">
+    
+    <img src='../images/<?php echo $imageN ?>' width='300'>
+  
+    </a>
+    <?php
+    echo "<td>";
+    echo $data['name'];
+ //   echo "</td>"; 
+    echo "<br>";
+    echo " $";
+    echo $data['price']; 
+    echo "</td>";
+    echo"</td>";
+    }else{
+    $imageN=$data["images"];
+    echo"<td style='text-align: center;'>";
+    ?>
+    <a href="detail.php?detail_id=<?php echo $data['product_id']?>">
+    
+    <img src='../images/<?php echo $imageN ?>' width='300'>
+  
+    </a>
+    <?php
+    echo "<td>";
+    echo $data['name'];
+ //   echo "</td>"; 
+    echo "<br>";
+    echo " $";
+    echo $data['price']; 
+    echo "</td>";
+    echo"</td>";
+    }
+    $i++;
+}
+echo '</table>';
+
+?>
+      
+        
+           
+           
+    </div>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ $result = mysqli_query($db,$sql);
 if ($result->num_rows>0){
     $row = mysqli_fetch_assoc($result);
     $_SESSION["Username"]=$row["Username"];
-    $_SESSION["user_id"]=$row[id];
+    $_SESSION["user_id"]=$row["id"];
     $_SESSION["Email"]=$row["Email"];
     header("location:../php/Homepage.php");
 }else{

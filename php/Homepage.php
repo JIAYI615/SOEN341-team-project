@@ -13,7 +13,6 @@ include '../php/dbConn.php';
         </div>
 <?php
 
-
 $records = mysqli_query($db,"select * from soen341.product_table");
 $i=0;
 echo "<table><tr>";
