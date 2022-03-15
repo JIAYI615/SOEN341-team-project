@@ -2,11 +2,10 @@
 include '../php/header.php';
 ?>
 
-<a href="">View my orders</a>
+<a href="../php/OrderList.php">View my orders</a>
 
 <br><br><br>
 
-<a href="">view my information</a>
 
 
 <?php

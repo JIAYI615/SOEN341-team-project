@@ -26,12 +26,13 @@
             <?php
             $tot=0;
             $totQ=0;
-            if(!$_SESSION['shops']){
+            if(!isset($_SESSION['shops'])){
                 echo "the shopping cart is empty!";	
             }else{
                     foreach($_SESSION['shops'] as $shop){
                     $tot+=$shop['price']*$shop['ShopQ'];
                     $totQ+=$shop['ShopQ'];
+                    $_SESSION["Total"]=$tot;
                 
             ?>
             <tr>

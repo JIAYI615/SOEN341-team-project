@@ -1,51 +1,70 @@
-<?php include '../php/header.php'; ?>
+<?php include '../php/header.php'; 
+include '../php/dbConn.php'; 
+?>
+
     <!--Products-->
-    <div class="products">
-        <div class="products-header">
+    <div class="deals">
+        <div class="deals-header">
             <h2 class="title">Vegetables</h2>
             <a href="../php/Homepage.php">
                 <h4>Go Back <i>&#x2192</i></h4>
             </a>
         </div>
-        <div class="row">
-            <div class="products-row1">
-                <div class="products-col">
-                    <a href="p3_vegetable_sweetPotatoes.html">
-                        <img src="../images/Vegetables/sweet_potatoes.jpg" alt="#">
-                        <h4>Sweet Potatoes</h4>
-                    </a>
-                    <p class="new-price"><strong>$1.32 avg. ea.</strong></p>
-                    <p>(300g avg.)</p>
-                    <p>$4.39 /kg$1.99 /lb.</p>
-                </div>
-                <div class="products-col">
-                    <a href="p3_vegetable_potatoes.html">
-                        <img src="../images/Vegetables/potatoes.jpg" alt="#">
-                        <h4>Potatoes</h4>
-                    </a>
-                    <p class="new-price"><strong>$0.97 avg. ea.</strong></p>
-                    <p>(295g avg.)</p>
-                    <p>$3.28 /kg$1.49 /lb.</p>
-                </div>
-            </div>
-            <div class="products-row2">
-                <div class="products-col">
-                    <a href="p3_vegetable_garlic.html">
-                        <img src="../images/Vegetables/garlic_commodity-page.jpg" alt="#">
-                        <h4>Garlic</h4>
-                    </a>
-                    <p class="new-price"><strong>$1.32 avg. ea.</strong></p>
-                    <p>(100g avg.)</p>
-                    <p>$13.21 /kg$5.99 /lb.</p>
-                </div>
-                <div class="products-col">
-                    <a href="p3_vegetable_bagOfCarrots.html">
-                        <img src="../images/Vegetables/Bag_of_Carrots.jpg" alt="#">
-                        <h4>Bag of Carrots</h4>
-                    </a>
-                    <p class="new-price"><strong>$3.00 avg. ea.</strong></p>
-                    <p>(100g avg.)</p>
-                    <p>$13.0 /kg$1.34 /lb</p>
+<?php
+
+$records = mysqli_query($db,"select * from soen341.product_table where category = 'Vegetables'");
+$i=0;
+echo "<table><tr>";
+while($data = mysqli_fetch_array($records))
+{
+    if($i %3 ==0){
+    $imageN=$data["images"];
+    echo"</tr><tr><td style='text-align: center;'>";
+
+    ?>
+    <a href="detail.php?detail_id=<?php echo $data['product_id']?>">
+    
+    <img src='../images/<?php echo $imageN ?>' width='300'>
+  
+    </a>
+    <?php
+    echo "<td>";
+    echo $data['name'];
+ //   echo "</td>"; 
+    echo "<br>";
+    echo " $";
+    echo $data['price']; 
+    echo "</td>";
+    echo"</td>";
+    }else{
+    $imageN=$data["images"];
+    echo"<td style='text-align: center;'>";
+    ?>
+    <a href="detail.php?detail_id=<?php echo $data['product_id']?>">
+    
+    <img src='../images/<?php echo $imageN ?>' width='300'>
+  
+    </a>
+    <?php
+    echo "<td>";
+    echo $data['name'];
+ //   echo "</td>"; 
+    echo "<br>";
+    echo " $";
+    echo $data['price']; 
+    echo "</td>";
+    echo"</td>";
+    }
+    $i++;
+}
+echo '</table>';
+
+?>
+      
+        
+           
+           
+     
                 </div>
             </div>
         </div>
