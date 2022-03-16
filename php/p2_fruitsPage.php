@@ -6,7 +6,7 @@ include '../php/dbConn.php';
     <!--Products-->
     <div class="deals">
         <div class="deals-header">
-            <h2 class="title">Vegetables</h2>
+            <h2 class="title">Fruits</h2>
             <a href="../php/Homepage.php">
                 <h4>Go Back <i>&#x2192</i></h4>
             </a>
