@@ -1,7 +1,7 @@
 <?php include '../php/header.php'; 
  include "../php/dbConn.php";
  if(!isset($_SESSION['user_id'])){
-  header("location:../php/p6.php");
+  header("location:../php/loginForm.php");
  }
 ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

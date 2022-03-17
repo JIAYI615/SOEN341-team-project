@@ -10,7 +10,7 @@ $PhoneNumber = $_POST['PhoneNumber'];
 $Email = $_POST['Email'];
 $Password = $_POST['Password'];
 if($FirstName == "" || $LastName == "" || $Username ==  "" || $Email == "" || $Password == "" || $Address == "" || $PhoneNumber == ""){   
-    header("location:../php/p6.php");
+    header("location:../php/signupForm.php");
     //echo "<script type='text/javascript'>alert('please fill all the blanks');</script>";
 }else{
     $check="select * from Users where Email = '$Email'";
