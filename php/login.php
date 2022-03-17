@@ -15,7 +15,7 @@ if ($result->num_rows>0){
     $_SESSION["Email"]=$row["Email"];
     header("location:../php/Homepage.php");
 }else{
-    header("location:../php/p6.php");
+    header("location:../php/signupForm.php");
 }
 }
 

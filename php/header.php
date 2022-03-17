@@ -50,7 +50,7 @@
                         if(isset($_SESSION["Username"])){
                             echo $_SESSION["Username"];
                         }else{
-                            $link="../php/p5.php";
+                            $link="../php/loginForm.php";
                             echo '<a href="'.$link.'">Log in</a>';
                         }
                         
@@ -63,7 +63,7 @@
                             $link="../php/logout.php";
                             echo '<a href="'.$link.'">Log out</a>';
                         }else{
-                            $link="../php/p6.php";
+                            $link="../php/signupForm.php";
                             echo '<a href="'.$link.'">  Sign up</a>';
                         } 
                        ?>
@@ -98,8 +98,8 @@
                     if($_SESSION["Email"] == "Admin"){
                     echo  '  <a href="#">BackEnd</a>
                      <ul class="dropdown">
-                            <li><a href="../php/p8.php">Product</a></li>
-                            <li><a href="../php/p7.php">Products List</a></li>
+                            <li><a href="../php/Admin_adding.php">Product</a></li>
+                            <li><a href="../php/productList.php">Products List</a></li>
                         </ul>';
                     }else{
                        echo "";
@@ -124,8 +124,8 @@
                 <li>
                    <a href="#">BackEnd</a>
                     <ul class="dropdown">
-                        <li><a href="../php/p8.php">Product</a></li>
-                        <li><a href="../php/p7.php">Products List</a></li>
+                        <li><a href="../php/Admin_adding.php">Product</a></li>
+                        <li><a href="../php/productList.php">Products List</a></li>
                     </ul>
                 </li>
             </ul>
