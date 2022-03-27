@@ -1,6 +1,9 @@
 {
-    
+    "name": "team/project",
+    "description": "341 team project made by Jiayi and Zayneb",
+    "license": "proprietary",
     "require-dev": {
-        "phpstan/phpstan": "^1.4"
+        "phpunit/phpunit": "^9.5",
+        "phpstan/phpstan": "^1.5"
     }
 }
