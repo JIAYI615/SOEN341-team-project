@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Warning":6,"EmptyTest::testThatStringMatch":3},"times":{"Warning":0.008,"EmptyTest::testThatStringMatch":0.003,"EmptyTest::testTheSummation":0}}
