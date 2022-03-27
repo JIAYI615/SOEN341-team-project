@@ -5,20 +5,11 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '77453f6f38fb15446f2cc29de28092355234b932',
-        'name' => '__root__',
+        'reference' => '0a984c4f2da41a87391cb25c010e0c259841b0cb',
+        'name' => 'team/project',
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'reference' => '77453f6f38fb15446f2cc29de28092355234b932',
-            'dev_requirement' => false,
-        ),
         'doctrine/instantiator' => array(
             'pretty_version' => '1.4.1',
             'version' => '1.4.1.0',
@@ -315,6 +306,15 @@
             'aliases' => array(),
             'reference' => '30885182c981ab175d4d034db0f6f469898070ab',
             'dev_requirement' => true,
+        ),
+        'team/project' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '0a984c4f2da41a87391cb25c010e0c259841b0cb',
+            'dev_requirement' => false,
         ),
         'theseer/tokenizer' => array(
             'pretty_version' => '1.2.1',
