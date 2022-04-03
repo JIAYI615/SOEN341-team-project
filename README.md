@@ -1,7 +1,7 @@
 # SOEN341-team-project
 [![Generic badge](https://img.shields.io/badge/SOEN341-Project-<BLUE>.svg)](https://shields.io/)
 
-[![Generic badge](https://img.shields.io/badge/VERSION-Sprint3-<BLUE>.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/VERSION-Sprint4-<BLUE>.svg)](https://shields.io/)
 
 
 ## :bulb:Objective
