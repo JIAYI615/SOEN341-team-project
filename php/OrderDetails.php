@@ -31,7 +31,22 @@ while($data = mysqli_fetch_array($records))
     <td span class="p9c3"><?php echo $data['item_name']; ?></td> 
     <td span class="p9c4"><?php echo $data['item_num']; ?></td>
     <td span class="p9c5"><?php echo $data['item_price']*$data['item_num']; ?></td>	
-    <td span class="p9c5"><a href="">write a comment</a></td>
+    <td span class="p9c5">
+      <?php
+      if($data2['Status'] == 2){
+      if($data['comment_status']==0){
+      ?>
+    <a href="comment.php?order_id=<?php echo $data['OrderNum']?>&item_id=<?php echo $data['item_id']?>">write a comment</a>
+      <?php
+      }else{
+        echo "already commented";
+      }
+    }else{
+      echo "commenting not available now";
+    }
+      ?>
+    
+    </td>
   </tr>	
   
 <?php

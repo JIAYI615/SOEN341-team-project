@@ -1,6 +1,17 @@
 <?php 
 include '../php/header.php'; 
 include '../php/dbConn.php'; 
+function status($statusNum){
+  if($statusNum == 0){
+    return "processing";
+  }else if($statusNum ==1){
+    return "shipping";
+  }else if($statusNum ==2){
+    return "delivered";
+  }else{
+    return "error status";
+  }
+}
 ?>
 <table border="2" style="border-color:teal;margin-left:3.5%" >
   <tr span class="tabletd">
@@ -9,6 +20,7 @@ include '../php/dbConn.php';
     <td>Total Price</td>
     <td></td>
     <td></td>
+    <td>Order Status</td>
   </tr>
 
 <?php
@@ -25,7 +37,20 @@ while($data = mysqli_fetch_array($records))
     <td span class="p9c3"><?php echo $Time;?></td> 
     <td span class="p9c4"><?php echo $data['TotalCost']; ?></td>
     <td span class="p9c5"><a href="OrderDetails.php?order_id=<?php echo $data['orderNum']?>">View Details</a></td>	
-    <td span class="p9c5"><a href="DeleteOrder.php?Order_id=<?php echo $data['orderNum']?>">Cancel the order</a></td>
+    <td span class="p9c5">
+    <?php
+    if($data['Status']== 0){
+    ?>
+    <a href="DeleteOrder.php?Order_id=<?php echo $data['orderNum']?>">Cancel the order</a>
+      <?php
+    }else{
+      echo "contact us to return";
+    }
+      
+      ?>
+  
+  </td>
+    <td span class="p9c4"><?php echo status($data['Status']); ?></td>
   </tr>	
   
 <?php
