@@ -5,11 +5,22 @@ include '../php/dbConn.php';
 $id=$_GET['detail_id'];
 $Dsql="select * from product_table where product_id = '$id'";
 $Dresult=mysqli_query($db,$Dsql);
-
+function Recommend($recommend){
+    if($recommend == 0){
+      return "No";
+    }else if($recommend ==1){
+      return "Yes";
+    }else{
+      return "N/A";
+    }
+  }
 while($data = mysqli_fetch_array($Dresult))
 {
   $imageN=$data["images"];
 ?>
+<style>
+      tr:nth-child(even) {background-color: #f2f2f2;}
+  </style>
   
   <div class="wholeBox" style="text-align: center;">
         
@@ -41,66 +52,42 @@ while($data = mysqli_fetch_array($Dresult))
         </div>
         
     </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+<?php
+}
+?>
+
+<h2 style="font-family: Arial, Helvetica, sans-serif; text-decoration: underline;">Comments</h2>
+<div>
+<table style="border-collapse: collapse; width: 100%;" >
+  <tr>
+    <th style="font-weight: bold; text-align: middle; padding: 8px;"><h3>Recommend?</h3></th>
+    <th style="text-align: middle; padding: 8px;"><h3>Comment</h3></th>
+    <th style="text-align: left; padding: 8px;"><h3>Time</h3></th>
+  </tr>
+
+<?php
+
+
+$records = mysqli_query($db,"select * from soen341.comments where item_id = '$id'");
+
+while($comments = mysqli_fetch_array($records))
+{
+    $Time=date('Y-m-d',$comments['time']);
+?>
+  <tr> 
+    <td span class="p9c5" style="text-align: left; padding: 8px;"><?php echo recommend($comments['recommend']); ?></td>	
+    <td span class="p9c4" style="text-align: left; padding: 8px;"><?php echo $comments['comment']; ?></td>
+    <td span class="p9c5" style="text-align: left; padding: 8px;"><?php echo $Time; ?></td>	
+  </tr>	
   
 <?php
 }
-/*
-style='text-align: center;'
-
-<tr>
-/   <td span class="p9c2"><?php echo "<img src='../images/$imageN' width='500px'>"; ?> <br></td>
-    <td style ="text-align= center;"  span class="p9c3">Name: <?php echo $data['name']; ?><br></td> 
-    <td span class="p9c4">Price: <?php echo $data['price']; ?><br></td>
-    <td span class="p9c5">Product description: <?php echo $data['description']; ?><br></td>	
-</tr>	
-*/
-
-
-
-/*
-<div class="cart-row">
-                    <div class="cart-item cart-column">
-                        <br>
-                        <img class="cart-item-image" src="../images/<?php echo $shop['images']; ?>" width="100" height="100">
-                        <span name="abb" class="cart-item-title"><?php echo $shop['name']; ?></span>
-                    </div>
-                    <span class="cart-price cart-column">$<?php echo $shop['price']; ?></span>
-                    <div class="cart-quantity cart-column">
-                            <a href="cut.php?id=<?php echo $shop['product_id']?>">-</a>
-                            <div class="product-quantity"><?php echo $shop['ShopQ']; ?></div>
-                            <a href="add.php?id=<?php echo $shop['product_id']?>" class='cartNum'>+</a>
-                            <a href="delete.php?id=<?php echo $shop['product_id']?>" class='cartDel'>delete</a>
-                    </div>
-
-
-
-*/
-
-
-
-
-
 ?>
+</table>
+
+
+
+</div>
 
 
 <?php include '../php/footer.php'; ?>
