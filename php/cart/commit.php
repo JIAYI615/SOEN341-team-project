@@ -1,5 +1,6 @@
 <?php
 session_start();
+include '../functions.php';
 include '/Applications/XAMPP/xamppfiles/htdocs/php/dbConn.php'; 
 $ship_address=$_POST["ship_address"];
 $Payment=$_POST["Payment"];
@@ -9,7 +10,7 @@ $TotalCost=round($Total*1.15, 2);
 $orderNum=time().mt_rand();
 $time=time();
 
-if($ship_address=="" || $Payment=="" ||$user_id==""||$TotalCost==""||$orderNum==""||$time==""){
+if(CheckOutValidInput($ship_address,$Payment,$TotalCost,$orderNum)){
     echo "<script type='text/javascript'>alert('fill all the blank');</script>";
 }
 else{

@@ -1,17 +1,7 @@
 <?php 
 include '../php/header.php'; 
 include '../php/dbConn.php'; 
-function status($statusNum){
-  if($statusNum == 0){
-    return "processing";
-  }else if($statusNum ==1){
-    return "shipping";
-  }else if($statusNum ==2){
-    return "delivered";
-  }else{
-    return "error status";
-  }
-}
+include '../php/functions.php';
 ?>
 <table border="2" style="border-color:teal;margin-left:3.5%" >
   <tr span class="tabletd">

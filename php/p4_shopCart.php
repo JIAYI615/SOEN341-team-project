@@ -1,5 +1,6 @@
 <?php include '../php/header.php'; 
  include "../php/dbConn.php";
+ include '../php/functions.php';
 ?>
 
 
@@ -90,15 +91,15 @@
                     </tr>
                     <tr>
                         <td>Estimated GST</td>
-                        <td>$<?php echo round($tot*0.05, 2); ?></td>
+                        <td>$<?php echo GST($tot); ?></td>
                     </tr>
                     <tr>
                         <td>Estimated QST</td>
-                        <td>$<?php echo round($tot*0.1, 2); ?></td>
+                        <td>$<?php echo QST($tot); ?></td>
                     </tr>
                     <tr>
                         <td><strong>Estimated Total</strong></td>
-                        <td><strong>$<?php echo round($tot*1.15, 2); ?></strong></td>
+                        <td><strong>$<?php echo EstimateTotal($tot); ?></strong></td>
                     </tr>
                 </table>
             </div>

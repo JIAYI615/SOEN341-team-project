@@ -1,13 +1,14 @@
 <?php 
 //session_start();
 include '../php/dbConn.php'; 
+include '../php/functions.php';
 $item_id=$_GET['item_id'];
 $OrderNum=$_GET['order_id'];
 $recommend=$_POST['recommend'];
 $comment=$_POST['comment'];
 $Time=time();
 $new_status=1;
-if($item_id == "" || $recommend == "" || $comment == "" || $Time == ""){
+if(commentValidInput($recommend,$comment)){
     echo "<script type='text/javascript'>alert('please fill all the blanks');</script>";
 }else{
     //change the order comment status so one item can't be commented twice

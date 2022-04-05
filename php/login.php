@@ -3,7 +3,8 @@ session_start();
 include '../php/dbConn.php'; 
 $LogEmail=$_POST['LogEmail'];
 $LogPassWord=$_POST['LogPassWord'];
-if($LogEmail=="" || $LogPassWord==""){
+include '../php/functions.php';
+if(loginValidInput($LogEmail,$LogPassWord)){
     echo "<script type='text/javascript'>alert('please fill all the blanks');</script>";
 }else{
 $sql= "select * from Users where Email ='$LogEmail' and Password ='$LogPassWord'";

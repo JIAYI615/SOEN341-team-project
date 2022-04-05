@@ -2,18 +2,11 @@
 include '../php/header.php'; 
 //session_start();
 include '../php/dbConn.php'; 
+include '../php/functions.php';
 $id=$_GET['detail_id'];
 $Dsql="select * from product_table where product_id = '$id'";
 $Dresult=mysqli_query($db,$Dsql);
-function Recommend($recommend){
-    if($recommend == 0){
-      return "No";
-    }else if($recommend ==1){
-      return "Yes";
-    }else{
-      return "N/A";
-    }
-  }
+
 while($data = mysqli_fetch_array($Dresult))
 {
   $imageN=$data["images"];

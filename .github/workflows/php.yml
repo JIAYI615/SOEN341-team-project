@@ -31,4 +31,4 @@ jobs:
     - name: Run static test for integration
       run: vendor/bin/phpstan analyse php
     - name: Run unit tests
-      run: vendor/bin/phpunit tests/EmptyTest.php
+      run: vendor/bin/phpunit tests
