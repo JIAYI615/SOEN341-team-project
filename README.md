@@ -15,6 +15,7 @@ The globalisation process has led the online shopping malls develop more and mor
 - Browsing items
 - Adding products to the cart
 - Checking out
+- Comment
 
 ## :busts_in_silhouette:Team Members
 <table>
@@ -65,4 +66,4 @@ The following are the instructions of how to run this project:
 - Open the cloned folder and open `SOEN341-team-project` folder and copy its contents into `htdocs` folder inside `XAMPP` folder.
 
 ## Version
-v.1.0
+v.4.0
